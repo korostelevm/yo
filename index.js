@@ -9,9 +9,9 @@ app.all('/file',(req,res)=>{
     res.sendFile(path.resolve(__dirname, "./image.png"));
 })
 app.all('/', (req, res) => {
-    console.log("Just got a request!")
-    res.statusCode = 401
-    res.setHeader('WWW-Authenticate','Basic')
-    return res.send('Unauthorized')
+//     console.log("Just got a request!")
+//     res.statusCode = 401
+//     res.setHeader('WWW-Authenticate','Basic')
+    return res.send('ok')
 })
 app.listen(process.env.PORT || 3000)
