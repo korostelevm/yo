@@ -10,6 +10,8 @@ app.all('/file',(req,res)=>{
 })
 app.all('/', (req, res) => {
     console.log("Just got a request!")
-    res.json(req.headers)
+    res.statusCode = 401
+    res.setHeader('WWW-Authenticate','Basic')
+    return res.send('Unauthorized')
 })
 app.listen(process.env.PORT || 3000)
