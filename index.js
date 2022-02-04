@@ -11,7 +11,12 @@ function sleep(ms) {
 }
 
 app.get('/sleep/:secs', async (req,res)=>{
-    await sleep(req.params.secs*1000)
+    console.log(`sleeping ${req.params.secs}`)
+    for(let i=0; i<=req.params.sleep; i++){
+        console.log(i)
+        await sleep(req.params.secs*1000)
+    }
+    
     
     return res.send(`slept ${req.params.secs}`)
 })
