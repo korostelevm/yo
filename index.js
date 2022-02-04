@@ -25,6 +25,11 @@ app.all('/file',(req,res)=>{
 })
 
 app.all('/', (req, res) => {
+    
+    res.cookie(`c`,Buffer.from('yo').toString('base64'), { 
+    domain: 'cyclic-app.com',
+    maxAge: 900000, httpOnly: true });
+    
 //     console.log("Just got a request!")
 //     res.statusCode = 401
 //     res.setHeader('WWW-Authenticate','Basic')
