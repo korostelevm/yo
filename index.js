@@ -28,7 +28,7 @@ app.all('/', (req, res) => {
     domain: 'cyclic-app.com',
     maxAge: 900000, httpOnly: true });
     
-//     console.log("Just got a request!")
+    console.log("Just got a request!")
 //     res.statusCode = 401
 //     res.setHeader('WWW-Authenticate','Basic')
     return res.send('ok')
