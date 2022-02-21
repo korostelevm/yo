@@ -2,7 +2,7 @@ const path = require('path')
 const express = require('express')
 const app = express()
 
-
+const some_jawn = process.env.JAWN
 
 function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms))
