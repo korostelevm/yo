@@ -2,7 +2,10 @@ const path = require('path')
 const express = require('express')
 const app = express()
 
-const some_jawn = process.env.JAWN
+const some_jawn = process.env.DB_CONNECTION_STRING
+const some_jaswn = process.env.FEATURE_FLAG
+const some_ajawn = process.env.EXTERNAL_API_KEY
+
 
 function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms))
@@ -33,4 +36,4 @@ app.all('/', (req, res) => {
 //     res.setHeader('WWW-Authenticate','Basic')
     return res.send('dddddddk')
 })
-app.listen(process.env.PORT || 3000)
+app.listen(3000)
