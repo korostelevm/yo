@@ -31,6 +31,6 @@ app.all('/', (req, res) => {
     console.log("Just got a request!")
 //     res.statusCode = 401
 //     res.setHeader('WWW-Authenticate','Basic')
-    return res.send('ok')
+    return res.send('dddddddk')
 })
 app.listen(process.env.PORT || 3000)
