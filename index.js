@@ -29,6 +29,7 @@ app.all('/file',(req,res)=>{
 })
 
 app.all('/', async (req, res) => {
+    console.log(process.env)
     let last_req = await j.get('last_req')
     await j.set('last_req', req.query)
 
