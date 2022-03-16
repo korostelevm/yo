@@ -40,6 +40,8 @@ app.all('/', async (req, res) => {
     console.log("Just got a request!")
 //     res.statusCode = 401
 //     res.setHeader('WWW-Authenticate','Basic')
-    return res.json(last_req)
+    return res.json({
+        message: 'hello'
+    })
 })
 app.listen(3000)
