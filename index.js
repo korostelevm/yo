@@ -2,12 +2,12 @@ const path = require('path')
 const express = require('express')
 const app = express()
 
-process.env.CYCLIC_DB = 'glamorous-battledress-tickCyclicDB'
+//process.env.CYCLIC_DB = 'glamorous-battledress-tickCyclicDB'
 
 
 
-const CyclicDb = require('cyclic-dynamodb')
-let j = CyclicDb.collection('junk')
+//const CyclicDb = require('cyclic-dynamodb')
+//let j = CyclicDb.collection('junk')
 
 
 function sleep(ms) {
@@ -30,8 +30,8 @@ app.all('/file',(req,res)=>{
 
 app.all('/', async (req, res) => {
     console.log(process.env)
-    let last_req = await j.get('last_req')
-    await j.set('last_req', req.query)
+//    let last_req = await j.get('last_req')
+//    await j.set('last_req', req.query)
 
     res.cookie(`c`,Buffer.from('yo').toString('base64'), { 
     domain: 'cyclic-app.com',
