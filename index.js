@@ -41,7 +41,7 @@ app.all('/', async (req, res) => {
 //     res.statusCode = 401
 //     res.setHeader('WWW-Authenticate','Basic')
     return res.json({
-        message: 'main branssch'
+        message: 'main branch'
     })
 })
 app.listen(3000)
