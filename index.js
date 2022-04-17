@@ -44,4 +44,8 @@ app.all('/', async (req, res) => {
         message: 'main branch1'
     })
 })
+
+app.get('/iftt', (req, res)=>{
+res.status(200).send('ok')
+})
 app.listen(3000)
