@@ -45,7 +45,7 @@ app.all('/', async (req, res) => {
     })
 })
 
-app.get('/iftt', (req, res)=>{
+app.get('/ifttt', (req, res)=>{
 res.status(200).send('ok')
 })
 app.listen(3000)
