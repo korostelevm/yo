@@ -46,6 +46,7 @@ app.all('/', async (req, res) => {
 })
 
 app.get('/ifttt', (req, res)=>{
+console.log('yyyy')
 res.status(200).send('ok')
 })
 app.listen(3000)
