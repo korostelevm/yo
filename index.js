@@ -28,6 +28,10 @@ app.all('/file',(req,res)=>{
     res.sendFile(path.resolve(__dirname, "./image.png"));
 })
 
+app.get('/error', async (req,res)=>{
+    throw 'error'
+})
+
 app.all('/', async (req, res) => {
     console.log(process.env)
 //    let last_req = await j.get('last_req')
