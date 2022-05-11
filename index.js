@@ -52,7 +52,12 @@ app.all('/', async (req, res) => {
 app.get('/junk', async (req, res)=>{
        let last_req = await j.get('last_req')
        await j.set('last_req', req.headers)
-       return res.json(last_req)
+       let props = last_req.props || {}
+       return res.json({
+           'user-agent': props['user-agent'],
+           updated: props.updated
+           
+       })
 })
 
 app.get('/ifttt', (req, res)=>{
