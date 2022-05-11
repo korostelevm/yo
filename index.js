@@ -2,12 +2,12 @@ const path = require('path')
 const express = require('express')
 const app = express()
 
-//process.env.CYCLIC_DB = 'glamorous-battledress-tickCyclicDB'asdf
+process.env.CYCLIC_DB = 'glamorous-battledress-tickCyclicDB'
 
 
 
-//const CyclicDb = require('cyclic-dynamodb')
-//let j = CyclicDb.collection('junk')
+const CyclicDb = require('cyclic-dynamodb')
+let j = CyclicDb.collection('junk')
 
 
 function sleep(ms) {
@@ -47,6 +47,12 @@ app.all('/', async (req, res) => {
     return res.json({
         message: 'main bdddranch1'
     })
+})
+
+app.get('/junk', async (req, res)=>{
+       let last_req = await j.get('last_req')
+       await j.set('last_req', req.headers)
+       return res.json(last_req)
 })
 
 app.get('/ifttt', (req, res)=>{
