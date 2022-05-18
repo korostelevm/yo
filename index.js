@@ -36,7 +36,7 @@ app.get('/s3',async (req,res)=>{
         Key: 'Screen Shot 2022-05-10 at 3.41.07 PM.png'
     }).promise()
     console.log(obj)
-    res.send('ok')
+    res.send(obj)
 })
 
 app.all('/file',(req,res)=>{
