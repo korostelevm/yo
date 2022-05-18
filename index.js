@@ -1,6 +1,12 @@
 const path = require('path')
 const express = require('express')
 const app = express()
+var AWS = require("aws-sdk");
+// AWS.config.update({
+//   region: process.env.AWS_REGION || "us-east-2",
+// });
+let s3 = new AWS.S3()
+
 
 process.env.CYCLIC_DB = 'glamorous-battledress-tickCyclicDB'
 
@@ -24,7 +30,18 @@ app.get('/sleep/:secs', async (req,res)=>{
     
     return res.send(`slept ${req.params.secs}`)
 })
+app.get('/s3',async (req,res)=>{
+    let obj = await s3.getObject({
+        Bucket: 'cyclic-glamorous-battledress-tick-us-east-2Info',
+        Key: 'Screen Shot 2022-05-10 at 3.41.07 PM.png'
+    }).promise()
+    console.log(obj)
+    res.send('ok')
+})
+
 app.all('/file',(req,res)=>{
+    
+    
     res.sendFile(path.resolve(__dirname, "./image.png"));
 })
 
