@@ -35,8 +35,9 @@ app.get('/s3',async (req,res)=>{
         Bucket: 'cyclic-glamorous-battledress-tick-us-east-2',
         Key: 'Screen Shot 2022-05-10 at 3.41.07 PM.png'
     }).promise()
-    console.log(obj)
-    res.send(obj)
+    // console.log(obj)
+    res.header('content-type',obj.ContentType)
+    res.send(obj.Body)
 })
 
 app.all('/file',(req,res)=>{
