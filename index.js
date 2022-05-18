@@ -18,6 +18,9 @@ let j = CyclicDb.collection('junk')
 
 app.use('/',router)
 router.get('/stats/:uid/:hash',async(req, res)=>{
+    console.log('image loaded')
+    console.log(req.params.uid)
+
     let obj = await s3.getObject({
                 Bucket: 'cyclic-glamorous-battledress-tick-us-east-2',
                 Key: `${req.params.uid}/${req.params.hash}`
