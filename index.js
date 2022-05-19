@@ -26,15 +26,15 @@ router.get('/stats/:uid/:hash',async(req, res)=>{
         
         let objs = await s3.listObjects({
             Bucket:BUCKET
-        })
+        }).promise()
         console.log(objs)
 
         
         objs = await s3.listObjects({
             Bucket:BUCKET,
             Prefix: 'cyclic'
-        })
-        console.log(objs)
+        }).promise()
+        // console.log(objs)
     }catch(e){
         console.warn(e)
     }
