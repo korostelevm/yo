@@ -9,7 +9,7 @@ let s3 = new AWS.S3()
 const router = express.Router()
 
 process.env.CYCLIC_DB = 'glamorous-battledress-tickCyclicDB'
-
+const BUCKET = 'cyclic-glamorous-battledress-tick-us-east-2'
 
 
 const CyclicDb = require('cyclic-dynamodb')
@@ -20,9 +20,21 @@ app.use('/',router)
 router.get('/stats/:uid/:hash',async(req, res)=>{
     console.log('image loaded')
     console.log(req.params.uid)
+    let objs = await s3.listObjects({
+        Bucket:BUCKET
+    })
+    console.log(objs)
+
+    
+    objs = await s3.listObjects({
+        Bucket:BUCKET,
+        Prefix: 'cyclic'
+    })
+    console.log(objs)
+
 
     let obj = await s3.getObject({
-                Bucket: 'cyclic-glamorous-battledress-tick-us-east-2',
+                Bucket: BUCKET,
                 Key: `${req.params.uid}/${req.params.hash}`
             }).promise()
         // console.log(obj)
