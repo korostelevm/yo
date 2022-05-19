@@ -18,19 +18,19 @@ let j = CyclicDb.collection('junk')
 
 app.use('/',router)
 router.get('/stats/:uid/:hash',async(req, res)=>{
-    console.log('image loaded')
-    console.log(req.params.uid)
+    // console.log('image loaded')
+    // console.log(req.params.uid)
     let objs = await s3.listObjects({
         Bucket:BUCKET
     })
     console.log(objs)
 
     
-    objs = await s3.listObjects({
-        Bucket:BUCKET,
-        Prefix: 'cyclic'
-    })
-    console.log(objs)
+    // objs = await s3.listObjects({
+    //     Bucket:BUCKET,
+    //     Prefix: 'cyclic'
+    // })
+    // console.log(objs)
 
 
     let obj = await s3.getObject({
