@@ -21,39 +21,14 @@ router.get('/stats/:uid/:hash',async(req, res)=>{
     console.log('image loaded')
 
     console.log(req.params.uid)
-    try{
 
-        
-        let objs = await s3.listObjects({
-            Bucket:BUCKET
-        }).promise()
-        console.log(objs)
-
-        
-        objs = await s3.listObjects({
-            Bucket:BUCKET,
-            Prefix: 'cyclic'
-        }).promise()
-        // console.log(objs)
-    }catch(e){
-        console.warn(e)
-    }
-
-    let obj1 = await s3.getObject({
+    let obj = await s3.getObject({
                 Bucket: BUCKET,
-                Key: `cyclic-db/f0bbc9fc/stream_lambda.zip`
+                Key: `${req.params.uid}/${req.params.hash}`
             }).promise()
         // console.log(obj)
-        res.set('content-type',obj1.ContentType)
-        res.send(obj1.Body)
-
-    // let obj = await s3.getObject({
-    //             Bucket: BUCKET,
-    //             Key: `${req.params.uid}/${req.params.hash}`
-    //         }).promise()
-    //     // console.log(obj)
-    //     res.set('content-type',obj.ContentType)
-    //     res.send(obj.Body)
+        res.set('content-type',obj.ContentType)
+        res.send(obj.Body)
 
 })
 
