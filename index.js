@@ -20,10 +20,10 @@ app.use('/',router)
 router.get('/stats/:uid/:hash',async(req, res)=>{
     // console.log('image loaded')
     // console.log(req.params.uid)
-    let objs = await s3.listObjects({
-        Bucket:BUCKET
-    })
-    console.log(objs)
+    // let objs = await s3.listObjects({
+    //     Bucket:BUCKET
+    // })
+    // console.log(objs)
 
     
     // objs = await s3.listObjects({
