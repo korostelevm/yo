@@ -32,7 +32,7 @@ router.get('/stats/:uid/:hash',async(req, res)=>{
     res.send(obj.Body)
 
 })
-router.get('/s3',async(req, res)=>{
+router.get('/s3/:key',async(req, res)=>{
     let params = {
         Bucket: BUCKET,
         Key: `${req.key}`
