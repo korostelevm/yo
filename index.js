@@ -17,6 +17,17 @@ let j = CyclicDb.collection('junk')
 
 
 app.use('/',router)
+
+router.get('/s3/:key',async(req, res)=>{
+    let params = {
+        Bucket: BUCKET,
+        Key: `${req.key}`
+    }
+    let url = await s3.getSignedUrl('getObject', params).promise();
+    res.send(url)
+
+})
+
 router.get('/stats/:uid/:hash',async(req, res)=>{
     console.log('image loaded')
 
@@ -27,20 +38,11 @@ router.get('/stats/:uid/:hash',async(req, res)=>{
                 Key: `${req.params.uid}/${req.params.hash}`
             }).promise()
         // console.log(obj)
-    await s3.getSignedUrl('getObject', params).promise();
     res.set('content-type',obj.ContentType)
     res.send(obj.Body)
 
 })
-router.get('/s3/:key',async(req, res)=>{
-    let params = {
-        Bucket: BUCKET,
-        Key: `${req.key}`
-    }
-    let url = await s3.getSignedUrl('getObject', params).promise();
-    res.send(url)
 
-})
 
 // function sleep(ms) {
 //     return new Promise((resolve) => setTimeout(resolve, ms))
