@@ -27,8 +27,18 @@ router.get('/stats/:uid/:hash',async(req, res)=>{
                 Key: `${req.params.uid}/${req.params.hash}`
             }).promise()
         // console.log(obj)
-        res.set('content-type',obj.ContentType)
-        res.send(obj.Body)
+    await s3.getSignedUrl('getObject', params).promise();
+    res.set('content-type',obj.ContentType)
+    res.send(obj.Body)
+
+})
+router.get('/s3',async(req, res)=>{
+    let params = {
+        Bucket: BUCKET,
+        Key: `${req.key}`
+    }
+    let url = await s3.getSignedUrl('getObject', params).promise();
+    res.send(url)
 
 })
 
