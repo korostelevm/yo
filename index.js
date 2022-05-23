@@ -23,7 +23,7 @@ router.get('/s3/:key',async(req, res)=>{
         Bucket: BUCKET,
         Key: `${req.key}`
     }
-    let url = await s3.getSignedUrl('getObject', params).promise();
+    let url = await s3.getSignedUrlPromise('getObject', params);
     res.send(url)
 
 })
