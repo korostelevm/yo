@@ -17,7 +17,9 @@ let j = CyclicDb.collection('junk')
 
 
 app.use('/',router)
-
+router.all('/', (req, res)=>{
+res.send('yo')
+})
 router.get('/s3/:key',async(req, res)=>{
     let params = {
         Bucket: BUCKET,
