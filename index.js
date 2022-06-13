@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const app = express()
 var AWS = require("aws-sdk");
+const axios = require('axios')
 // AWS.config.update({
 //   region: process.env.AWS_REGION || "us-east-2",
 // });
@@ -23,6 +24,12 @@ res.send('yo')
 
 router.get('/', (req, res)=>{
 res.json({yo:'yo'})
+})
+
+router.post('/slack', async (req, res)=>{
+    await axios.post(process.env.slack_url,{
+        text: 'yo'
+    })
 })
 
 
