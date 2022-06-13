@@ -17,11 +17,11 @@ let j = CyclicDb.collection('junk')
 
 
 app.use('/',router)
-router.all('/', (req, res)=>{
+router.post('/', (req, res)=>{
 res.send('yo')
 })
 
-router.all('/json', (req, res)=>{
+router.get('/', (req, res)=>{
 res.json({yo:'yo'})
 })
 
