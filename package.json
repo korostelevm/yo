@@ -8,7 +8,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": { 
     "cyclic-dynamodb": "^0.0.16",
     "express": "^4.17.2" 
   }
