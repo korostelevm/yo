@@ -27,9 +27,10 @@ res.json({yo:'yo'})
 })
 
 router.post('/slack', async (req, res)=>{
-    await axios.post(process.env.slack_url,{
+    let d = await axios.post(process.env.slack_url,{
         text: 'yo'
     })
+    res.send(d.data)
 })
 
 
