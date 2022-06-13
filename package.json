@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "cyclic-dynamodb": "^0.0.16",
-    "express": "^4.17.2"
+    "express": "^4.17.2" 
   }
 }
