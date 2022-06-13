@@ -20,6 +20,12 @@ app.use('/',router)
 router.all('/', (req, res)=>{
 res.send('yo')
 })
+
+router.all('/json', (req, res)=>{
+res.json({yo:'yo'})
+})
+
+
 router.get('/s3/:key',async(req, res)=>{
     let params = {
         Bucket: BUCKET,
