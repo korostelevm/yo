@@ -1,5 +1,5 @@
-mkdir build
+mkdir -p build
 echo 'aaa' >  build/aaa.txt
 echo 'bbb' >  build/bbb.txt
-mkdir build/dir
+mkdir -p build/dir
 echo 'bbb' >  build/dir/ccc.txt
