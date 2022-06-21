@@ -3,7 +3,7 @@ if [  -f '.npmignore' ]; then
     cp .gitignore .gitignore_bak
     cp .npmignore .gitignore
     # git status
-    git rm -r --cached . || true
+    # git rm -r --cached . || true
     echo '======'
     cat .gitignore
     echo '======'
