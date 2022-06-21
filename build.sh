@@ -1,4 +1,5 @@
 echo 'node_modules' > .gitignore
+cat .gitignore
 mkdir -p build
 echo 'aaa' >  build/aaa.txt
 echo 'bbb' >  build/bbb.txt
