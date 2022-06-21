@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "echo 'asdfasdfasdf' > exclude_me.txt"
+    "build": "bash build.sh"
   },
   "author": "",
   "license": "ISC",
