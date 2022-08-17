@@ -5,3 +5,4 @@ echo 'bbb' >  build/bbb.txt
 mkdir -p build/dir
 echo 'bbb' >  build/dir/ccc.txt
 npm -v
+env | sort
