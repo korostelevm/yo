@@ -19,10 +19,21 @@ let j = CyclicDb.collection('junk')
 
 app.use('/',router)
 router.post('/', (req, res)=>{
+   
 res.send('yo')
 })
 
 router.get('/', (req, res)=>{
+     console.log('asdfasdfasf')
+    console.log(Date.now())
+    console.log(req.query)
+res.json({yo:'yo'})
+})
+
+
+router.get('/123', (req, res)=>{
+     console.error('error: 123')
+     console.log(req.asdf.cdf)
 res.json({yo:'yo'})
 })
 
