@@ -24,17 +24,34 @@ res.send('yo')
 })
 
 router.get('/', (req, res)=>{
-     console.log('asdfasdfasf')
+    console.log('asdfasdfasf')
     console.log(Date.now())
     console.log(req.query)
-res.json({yo:'yo'})
+    console.log(req.headers)
+    return res.json({yo:'yo'})
 })
 
 
 router.get('/123', (req, res)=>{
-     console.error('error: 123')
-     console.log(req.asdf.cdf)
-res.json({yo:'yo'})
+    console.log('error: 123')
+    try{
+        console.log(req.asdf.cdf)
+    }catch(e){
+        console.error(e)
+    }
+    return res.json({yo:'yo'})
+})
+
+router.get('/error/:error', (req, res)=>{
+    console.error(req.params.error)
+    try{
+        res.statusCode = req.params.error;
+        return res.json({error: req.params.error})
+    }catch(e){
+        res.statusCode = 400;
+        return res.send('error')
+    }
+
 })
 
 router.post('/slack', async (req, res)=>{
