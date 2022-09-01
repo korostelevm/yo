@@ -28,6 +28,7 @@ router.get('/', (req, res)=>{
     console.log(Date.now())
     console.log(req.query)
     console.log(req.headers)
+   throw 'asdf'
     return res.json({yo:'yo'})
 })
 
