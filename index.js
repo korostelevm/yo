@@ -23,6 +23,17 @@ router.post('/', (req, res)=>{
 res.send('yo')
 })
 
+ app.all('/', async (req, res) => {
+    console.log(req.headers)
+    
+    console.log("Just got a request!")
+//     res.statusCode = 401
+//     res.setHeader('WWW-Authenticate','Basic')
+    return res.json({
+        message: 'ok'
+    })
+})
+
 router.get('/', (req, res)=>{
     console.log('asdfasdfasf')
     console.log(Date.now())
