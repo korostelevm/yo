@@ -2,7 +2,7 @@ const path = require('path')
 const express = require('express')
 const app = express()
 
-app.all('/', (req, res) => {
+app.all('*', (req, res) => {
     console.log(Date.now())
     console.log(req.headers)
     res.json(req.headers)
