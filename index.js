@@ -15,6 +15,6 @@ app.all('*', async (req, res) => {
       lat: r.data.lat,
       lon: r.data.lon,
     })
-    res.json(req.headers)
+    res.json(r.data)
 })
 app.listen(process.env.PORT || 3000)
