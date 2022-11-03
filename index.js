@@ -17,7 +17,7 @@ const CyclicDb = require('cyclic-dynamodb')
 let j = CyclicDb.collection('junk')
 
 
-app.use('/',router)
+// app.use('/',router)
 router.post('/', (req, res)=>{
    
 res.send('yo')
