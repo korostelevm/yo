@@ -2,9 +2,8 @@
   "name": "starter-micro-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "build": "npm -v && bash build.sh"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
