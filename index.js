@@ -13,6 +13,7 @@ router.get('/', async (req, res)=>{
     })
 })
 
+app.use(router)
 
 
 app.listen(3000)
