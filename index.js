@@ -5,9 +5,11 @@ const router = express.Router()
 router.get('/', async (req, res)=>{
     console.log(req.headers)
     console.log("Just got a request!")
-
+    console.log(req.query)
     return res.json({
-        message: 'ok'
+        message: 'ok',
+        h: req.headers,
+        q: req.query
     })
 })
 
