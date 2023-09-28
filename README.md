@@ -4,5 +4,6 @@ This is the simplest possible nodejs api  using the base http library that respo
 ```
 Yo! 
 ```
+Deploy it in 5.3 seconds:
 
 [![Deploy to Cyclic](https://deploy.cyclic.app/button.svg)](https://deploy.cyclic.app/)
